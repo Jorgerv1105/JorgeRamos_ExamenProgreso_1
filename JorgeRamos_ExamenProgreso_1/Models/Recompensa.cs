@@ -2,22 +2,19 @@
 
 namespace JorgeRamos_ExamenProgreso_1.Models
 {
-    public class PlanRecompensas
+    public class Recompensa
     {
         [Key]
-        public int PlanRecompensasId { get; set; }
+        public int RecompensaId { get; set; }
 
         [Required]
-        [StringLength(50)]
         public string Nombre { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime FechaInicio { get; set; }
 
-        [Range(0, int.MaxValue)]
         public int PuntosAcumulados { get; set; }
 
-        [Required]
         public string TipoRecompensa
         {
             get
