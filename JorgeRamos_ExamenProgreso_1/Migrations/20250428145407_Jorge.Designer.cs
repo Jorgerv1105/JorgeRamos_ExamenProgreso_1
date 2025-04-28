@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JorgeRamos_ExamenProgreso_1.Migrations
 {
     [DbContext(typeof(JorgeRamos_ExamenProgreso_1Context))]
-    [Migration("20250428123953_Migracion Inicial")]
-    partial class MigracionInicial
+    [Migration("20250428145407_Jorge")]
+    partial class Jorge
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,6 +54,29 @@ namespace JorgeRamos_ExamenProgreso_1.Migrations
                     b.HasKey("ClienteId");
 
                     b.ToTable("Cliente");
+                });
+
+            modelBuilder.Entity("JorgeRamos_ExamenProgreso_1.Models.Recompensas", b =>
+                {
+                    b.Property<int>("RecompensaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RecompensaId"));
+
+                    b.Property<DateTime>("FechaInicio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PuntosAcumulados")
+                        .HasColumnType("int");
+
+                    b.HasKey("RecompensaId");
+
+                    b.ToTable("Recompensas");
                 });
 
             modelBuilder.Entity("JorgeRamos_ExamenProgreso_1.Models.Reserva", b =>

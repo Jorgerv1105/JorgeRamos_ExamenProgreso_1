@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace JorgeRamos_ExamenProgreso_1.Migrations
 {
     /// <inheritdoc />
-    public partial class MigracionInicial : Migration
+    public partial class Jorge : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -29,6 +29,21 @@ namespace JorgeRamos_ExamenProgreso_1.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Recompensas",
+                columns: table => new
+                {
+                    RecompensaId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FechaInicio = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PuntosAcumulados = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Recompensas", x => x.RecompensaId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Reserva",
                 columns: table => new
                 {
@@ -47,7 +62,7 @@ namespace JorgeRamos_ExamenProgreso_1.Migrations
                         column: x => x.ClienteId,
                         principalTable: "Cliente",
                         principalColumn: "ClienteId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -59,6 +74,9 @@ namespace JorgeRamos_ExamenProgreso_1.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Recompensas");
+
             migrationBuilder.DropTable(
                 name: "Reserva");
 

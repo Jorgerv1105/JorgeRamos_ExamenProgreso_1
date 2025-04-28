@@ -2,7 +2,7 @@
 
 namespace JorgeRamos_ExamenProgreso_1.Models
 {
-    public class Recompensa
+    public class Recompensas
     {
         [Key]
         public int RecompensaId { get; set; }
