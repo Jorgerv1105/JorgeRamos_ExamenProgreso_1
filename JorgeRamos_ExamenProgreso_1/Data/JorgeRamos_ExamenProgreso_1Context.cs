@@ -15,5 +15,7 @@ namespace JorgeRamos_ExamenProgreso_1.Data
         }
 
         public DbSet<JorgeRamos_ExamenProgreso_1.Models.Cliente> Cliente { get; set; } = default!;
+        public DbSet<JorgeRamos_ExamenProgreso_1.Models.Reserva> Reserva { get; set; } = default!;
+        public DbSet<JorgeRamos_ExamenProgreso_1.Models.PlanRecompensas> PlanRecompensas { get; set; } = default!;
     }
 }
