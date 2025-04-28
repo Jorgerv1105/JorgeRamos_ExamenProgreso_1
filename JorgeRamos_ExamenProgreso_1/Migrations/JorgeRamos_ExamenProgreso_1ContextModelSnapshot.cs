@@ -108,7 +108,7 @@ namespace JorgeRamos_ExamenProgreso_1.Migrations
                     b.HasOne("JorgeRamos_ExamenProgreso_1.Models.Cliente", "Cliente")
                         .WithMany("Reservas")
                         .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Cliente");
