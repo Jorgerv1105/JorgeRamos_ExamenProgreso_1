@@ -23,7 +23,7 @@ namespace JorgeRamos_ExamenProgreso_1.Models
         [DataType(DataType.Date)]
         public DateTime FechaRegistro { get; set; }
 
-        public ICollection<Reserva> Reservas { get; set; }
+        public ICollection<Reserva>? Reservas { get; set; }
 
     }
 }

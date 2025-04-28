@@ -20,6 +20,6 @@ namespace JorgeRamos_ExamenProgreso_1.Models
         public decimal ValorPagar { get; set; }
 
         public int ClienteId { get; set; }
-        public Cliente Cliente { get; set; }
+        public Cliente? Cliente { get; set; }
     }
 }
