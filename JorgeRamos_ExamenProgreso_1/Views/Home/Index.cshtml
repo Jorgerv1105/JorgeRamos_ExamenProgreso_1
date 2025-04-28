@@ -2,16 +2,29 @@
     ViewData["Title"] = "Home Page";
 }
 
+<style>
+    .meme-img {
+        width: 400px;
+        height: 500px;
+    }
+</style>
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <img src="~/img/meme.jpg" class="img-fluid meme-img" alt="Responsive image">
+
+    <div class="mt-4">
+        <input type="text" id="campoTexto" class="form-control mb-3" placeholder="Escribe algo...">
+        <button class="btn btn-outline-info btn-lg" onclick="mostrarAlerta()">Mostrar Alerta</button>
+    </div>
 </div>
-<img src="~/img/meme.jpg" class="img-fluid" alt="Responsive image">
 
 <script>
     function mostrarAlerta() {
         var valorCampo = document.getElementById("campoTexto").value;
-        alert("Mi nombre es Juan Pérez, mi hobbie es leer, y el valor del campo de texto es: " + valorCampo);
+        alert("Mi nombre es Jorge Ramos, mi hobbie es leer y hacer deportes, y el valor del campo de texto es: " + valorCampo);
     }
 </script>
 
+<footer>
+    <p>Nombre: Jorge Ramos<br>Carrera: Ingeniería en Software<br></p>
+</footer>
